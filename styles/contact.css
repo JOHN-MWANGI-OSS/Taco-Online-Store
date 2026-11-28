@@ -1,0 +1,385 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --nav-color: rgba(255, 255, 255, 0.395);
+  --hero-color: rgba(255, 255, 255, 0.355);
+  --footer-color: rgba(255, 255, 255, 0.566);
+  --nav-width: 100%;
+  --nav-font: 0.8rem;
+  --hero-padding: 1rem;
+  --hero-size: 1.2rem;
+  --svg-size: 20px;
+  --social-gap: 40px;
+}
+
+body {
+  background-image: linear-gradient(
+    45deg,
+    rgba(128, 0, 128, 0.532),
+    rgba(75, 48, 75, 0.822)
+  );
+  font-family: "roboto";
+}
+
+.nav-bar {
+  background-color: var(--nav-color);
+  border-radius: 10px;
+  filter: back-shadow(10px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.621);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  padding: 1rem;
+}
+
+#nav-part ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+#nav-part ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+#nav-part ul li a:active,
+#top a:active {
+  color: white;
+  text-shadow: 0 0 5px white;
+}
+
+.hero-section {
+  margin: 5rem auto 2rem;
+  border: 2px solid white;
+  width: 80%;
+  background: var(--hero-color);
+  border-radius: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section h1::after {
+  content: "📞";
+}
+
+.hero-section h1::before {
+  content: "📞";
+}
+
+.hero-section h1 {
+    background-color: rgba(255, 255, 255, 0.26);
+    border-radius: 10px;
+    border: 0.5px solid white;
+}
+
+.contact-box h2, .location-box h2 {
+    width: 220px;
+    background-color: rgba(255, 255, 255, 0.26);
+    border-radius: 10px;
+    border: 0.5px solid white;
+    margin: auto;
+}
+.hero-imgs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+img {
+  width: 25%;
+  border-radius: 10px;
+  height: auto;
+}
+
+.contact-box {
+  width: 90%;
+  background-color: var(--hero-color);
+  border-radius: 10px;
+  border: 2px solid white;
+  margin: auto;
+  padding: 2rem;
+}
+
+h2 {
+  text-align: center;
+}
+
+fieldset {
+  padding: 1rem;
+  border: 0.5px solid rgba(255, 255, 255, 0.392);
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+legend {
+  font-weight: bold;
+  color: green;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  margin: 0.5rem auto;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.477);
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.288);
+  font-weight: bold;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid cyan;
+  border: none;
+}
+
+label {
+  font-weight: bold;
+  color: black;
+  font-size: 0.8rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: 40%;
+  font-weight: bolder;
+}
+
+.location-box {
+  background-color: var(--hero-color);
+  width: 90%;
+  margin: 2rem auto;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid white;
+}
+
+.location-box address {
+  margin: 1rem auto 0;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.location-box address a {
+  background-color: rgba(6, 225, 6, 0.397);
+  text-decoration: none;
+  color: rgb(4, 17, 4);
+  border-radius: 10px;
+  display: inline-block;
+  padding: 0.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.399);
+}
+
+.location-box h2::after {
+  content: "📌";
+}
+
+.location-box h2::before {
+  content: "📌";
+}
+footer {
+  width: 100%;
+  background-color: var(--footer-color);
+  padding: 4rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+svg {
+  width: 30px;
+  height: 30px;
+}
+
+#top {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#top a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+@media (max-width: 1920px) {
+  .contact-box fieldset {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-box fieldset{
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .contact-box fieldset {
+    width: 100%;
+  }
+
+  .nav-bar {
+    width: var(--nav-width);
+    left: 0;
+  }
+
+  li {
+    font-size: var(--nav-font);
+  }
+
+  .hero-section {
+    padding: var(--hero-padding);
+  }
+
+  .hero-section h1 {
+    font-size: var(--hero-size);
+  }
+
+  footer {
+    padding: 2rem;
+  }
+
+  svg {
+    width: var(--svg-size);
+    height: var(--svg-size);
+  }
+
+  .social-media {
+    gap: var(--social-gap);
+    margin-bottom: 1rem;
+  }
+
+  .contact-box {
+    padding: 0.2rem;
+  }
+
+  .contact-box h2 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .location-box {
+    font-size: 0.8rem;
+  }
+}
+
+@media (hover: hover) {
+  svg:hover {
+    transform: scale(1.2);
+  }
+
+  svg[id="instagram"]:hover {
+    border-width: 0 0 3px 0;
+    border-color: #cc2366;
+    border-style: solid;
+    border-radius: 5px;
+  }
+
+  svg[id="facebook"]:hover {
+    border-width: 0 0 3px 0;
+    border-color: #0000ff;
+    border-style: solid;
+    border-radius: 5px;
+  }
+
+  svg[id="whatsapp"]:hover {
+    border-width: 0 0 3px 0;
+    border-color: #0dee0dd9;
+    border-style: solid;
+    border-radius: 5px;
+  }
+
+  svg[id="tiktok"]:hover {
+    border-width: 0 0 3px 0;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 5px;
+  }
+
+  #nav-part > ul > li > a::after {
+    content: "";
+    display: block;
+    width: 80%;
+    background-color: white;
+    height: 0.1rem;
+    margin: 0.1rem auto;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+  }
+
+  #nav-part > ul > li > a:hover::after {
+    opacity: 1;
+  }
+
+  #nav-part ul li a:hover {
+    color: white;
+    text-shadow: 0 0 5px white;
+  }
+
+  #top a:hover {
+    color: white;
+    text-shadow: 0 0 5px white;
+  }
+
+  #top a::after {
+    content: "";
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    border-color: white;
+    display: block;
+    width: 70px;
+    margin: auto;
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+
+  #top a:hover::after {
+    opacity: 1;
+  }
+
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    color: white;
+    border: 1px solid black;
+  }
+}
