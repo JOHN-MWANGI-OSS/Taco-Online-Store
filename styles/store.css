@@ -1,0 +1,244 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --nav-color: rgba(255, 255, 255, 0.395);
+  --hero-color: rgba(255, 255, 255, 0.355);
+  --footer-color: rgba(255, 255, 255, 0.566);
+  --nav-width: 100%;
+  --nav-font: 0.8rem;
+  --hero-padding: 1rem;
+  --hero-size: 1.2rem;
+  --svg-size: 20px;
+  --social-gap: 40px;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(
+    45deg,
+    rgba(128, 0, 128, 0.532),
+    rgba(75, 48, 75, 0.822)
+  );
+  font-family: "roboto";
+}
+
+.nav-bar {
+  background-color: var(--nav-color);
+  border-radius: 10px;
+  filter: back-shadow(10px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.621);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  width: 90%;
+  padding: 1rem;
+}
+
+#nav-part ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+#nav-part ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+#nav-part ul li a:active {
+  color: white;
+  text-shadow: 0 0 5px white;
+}
+
+.hero-section {
+  margin: 5rem auto 2rem;
+  border: 2px solid white;
+  width: 80%;
+  background: var(--hero-color);
+  border-radius: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-imgs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+img {
+  width: 25%;
+  border-radius: 10px;
+  height: auto;
+}
+
+.open-hours {
+  width: 90%;
+  background-color: var(--hero-color);
+  border-radius: 10px;
+  border: 2px solid white;
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+.open-hours p {
+  text-align: center;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.open-hours dl dt {
+  color: rgb(52, 63, 52);
+  font-weight: bold;
+  margin: 0 auto 0.5rem;
+}
+
+.open-hours dl dd {
+  background: rgba(255, 255, 255, 0.277);
+  outline: 1px solid white;
+  border-radius: 10px;
+  padding: 0 2rem;
+  margin: 0 0 0 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.434);
+}
+
+.open-hours dl dd::after {
+  content: "⏲️";
+}
+
+.open-hours dl dd::before {
+  content: "⏲️";
+}
+
+footer {
+  width: 100%;
+  background-color: var(--footer-color);
+  padding: 4rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+svg {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 500px) {
+  .nav-bar {
+    width: var(--nav-width);
+  }
+
+  li {
+    font-size: var(--nav-font);
+  }
+
+  .hero-section {
+    padding: var(--hero-padding);
+  }
+
+  .hero-section h1 {
+    font-size: var(--hero-size);
+  }
+
+  footer {
+    padding: 2rem;
+  }
+
+  svg {
+    width: var(--svg-size);
+    height: var(--svg-size);
+  }
+
+  .social-media {
+    gap: var(--social-gap);
+    margin-bottom: 1rem;
+  }
+
+  body {
+    height: 100dvh;
+  }
+
+  .open-hours {
+    margin: 4rem auto;
+  }
+}
+
+@media (hover: hover) {
+  svg:hover {
+    transform: scale(1.2);
+  }
+
+  svg[id="instagram"]:hover {
+    border-width: 0 0 3px 0;
+    border-color: #cc2366;
+    border-style: solid;
+    border-radius: 5px;
+  }
+
+  svg[id="facebook"]:hover {
+    border-width: 0 0 3px 0;
+    border-color: #0000ff;
+    border-style: solid;
+    border-radius: 5px;
+  }
+
+  svg[id="whatsapp"]:hover {
+    border-width: 0 0 3px 0;
+    border-color: #0dee0dd9;
+    border-style: solid;
+    border-radius: 5px;
+  }
+
+  svg[id="tiktok"]:hover {
+    border-width: 0 0 3px 0;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 5px;
+  }
+
+  #nav-part > ul > li > a::after {
+    content: "";
+    display: block;
+    width: 80%;
+    background-color: white;
+    height: 0.1rem;
+    margin: 0.1rem auto;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+  }
+
+  #nav-part > ul > li > a:hover::after {
+    opacity: 1;
+  }
+
+  #nav-part ul li a:hover {
+    color: white;
+    text-shadow: 0 0 5px white;
+  }
+}
